@@ -1,0 +1,265 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --accent-color: #4fc3dc;
+    --warning-color: #e74c3c;
+    --success-color: #2ecc71;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f0f2f5;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 195, 220, 0.2);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Check Phone Form */
+.check-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.check-form input {
+    flex: 1;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: var(--card-shadow);
+    background-color: white;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* Column widths */
+th:nth-child(1), td:nth-child(1) { /* Phone number */
+    width: 25%;
+}
+
+th:nth-child(2), td:nth-child(2) { /* Description */
+    width: 40%;
+}
+
+th:nth-child(3), td:nth-child(3) { /* Date */
+    width: 20%;
+}
+
+th:nth-child(4), td:nth-child(4) { /* Action */
+    width: 15%;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: var(--light-bg);
+}
+
+.remove-btn {
+    background-color: var(--warning-color);
+    padding: 8px 15px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 100px;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Check Result Styling */
+.hidden {
+    display: none;
+}
+
+#check-result {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.blocked {
+    background-color: #ffecec;
+    color: var(--warning-color);
+    border: 1px solid #f5c6cb;
+}
+
+.not-blocked {
+    background-color: #e3f9e5;
+    color: var(--success-color);
+    border: 1px solid #c3e6cb;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #777;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+}
+
+/* Add button alignment */
+form[action="/add"] button {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
+    
+    .check-form {
+        flex-direction: column;
+    }
+    
+    .check-form button {
+        width: 100%;
+    }
+    
+    /* Adjust column widths for mobile */
+    th:nth-child(1), td:nth-child(1) { /* Phone number */
+        width: 30%;
+    }
+    
+    th:nth-child(2), td:nth-child(2) { /* Description */
+        width: 30%;
+    }
+    
+    th:nth-child(3), td:nth-child(3) { /* Date */
+        display: none;
+    }
+    
+    th:nth-child(4), td:nth-child(4) { /* Action */
+        width: 20%;
+    }
+    
+    .remove-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
